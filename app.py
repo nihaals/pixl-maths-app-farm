@@ -1,65 +1,3 @@
-# def qone():
-#     screen_shot(r"C:\Users\Nihaal\Pictures\tmp\mems0.png")
-#     r = ocr(r"C:\Users\Nihaal\Pictures\tmp\mems0.png")
-#
-#     if '3/4' in r:
-#         # Click unlikely
-#         click(624, 474)
-#     elif '2/4' in r:
-#         # Click even
-#         click(711, 474)
-#     elif '1/4' in r:
-#         # Click likely
-#         click(798, 474)
-#
-#     time.sleep(0.5)
-#
-#     # Click mark it
-#     click(*mark_it_coords)
-#
-#
-# def qtwo():
-#     screen_shot(r"C:\Users\Nihaal\Pictures\tmp\mems1.png")
-#     r = ocr(r"C:\Users\Nihaal\Pictures\tmp\mems1.png")
-#
-#     rer = re.findall(r".*?(\d{2,4}\.\d{3}).+", r)
-#
-#     try:
-#         n1, n2, n3, n4 = [float(i) for i in rer]
-#     except ValueError:
-#         print(r)
-#         print(rer)
-#         exit()
-#
-#     a1 = str(round(n1, 0))
-#     a2 = str(round(n2 / 10, 0) * 10)
-#     a3 = str(round(n3 / 100, 0) * 100)
-#     a4 = str(round(n4 / 1000, 0) * 1000)
-#
-#     # Click first answer box
-#     click(805, 409)
-#     # Enter answer
-#     keyboard.write(a1)
-#
-#     # Click second answer box
-#     click(805, 469)
-#     # Enter answer
-#     keyboard.write(a2)
-#
-#     # Click third answer box
-#     click(805, 535)
-#     # Enter answer
-#     keyboard.write(a3)
-#
-#     # Click fourth answer box
-#     click(805, 599)
-#     # Enter answer
-#     keyboard.write(a4)
-#
-#     click(*mark_it_coords)
-#     time.sleep(1)
-#     click(*mark_it_coords)
-
 import copy
 import math
 import re
@@ -228,7 +166,7 @@ def setup():
     click(707, 810)
 
 
-def main(score: int = 10, wait: bool = True):
+def main_app(score: int = 10, wait: bool = True):
     score = copy.copy(score)
     assert score > 0
 
@@ -258,6 +196,20 @@ def main(score: int = 10, wait: bool = True):
         wait_for_save()
         time.sleep(1)
 
-
-setup()
-main(5, False)
+def main():
+    score = input('Score: ')
+    try:
+        score = int(score)
+    except ValueError:
+        print('Enter a number.')
+        return 
+    
+    if score < 1:
+        print('Score must be at least 1')
+        return 
+    
+    setup()
+    main_app(score, False)
+    
+if __name__ == '__main__':
+    main()
