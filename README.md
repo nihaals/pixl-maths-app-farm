@@ -1,6 +1,6 @@
 # PiXL-Maths-App-Farm
 
-This project requires atleast Python 3.6 (can probably use 3.4).
+This project requires atleast Python 3.6 (can probably use 3.4). It may not work correctly on MacOS or Linux
 
 ## Setup
 1. `pip install -U -r requirements.txt` or `pip3 install -U -r requirements.txt`
