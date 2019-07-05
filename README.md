@@ -9,6 +9,8 @@ support is appreciated.
 1. Install [Python](https://www.python.org/downloads/)
 2. Run `pip install -U pma` in your terminal/command prompt. This is the same command to update
 
+There are also [docker images](https://hub.docker.com/r/orangutan/pma).
+
 ## CLI Usage
 * `python -m pma farm --help`
 * `python -m pma farm --goal 100 SCHOOL_ID USERNAME PASSWORD`
