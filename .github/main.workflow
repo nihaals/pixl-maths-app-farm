@@ -1,9 +1,6 @@
 workflow "Test and upload on tag" {
   resolves = [
-    "Test 3.6",
     "Twine upload",
-    "Test 3.5",
-    "Test 2.7",
   ]
   on = "push"
 }
