@@ -49,7 +49,7 @@ setup(
     include_package_data=True,
     install_requires=requirements,
     python_requires='>=3.5',
-    data_files=('pma', 'pma/*.json'),
+    data_files=('', 'pma/*.json'),
     entry_points="""
     [console_scripts]
     pma=pma.cli:cli
