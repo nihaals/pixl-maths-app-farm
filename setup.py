@@ -1,6 +1,6 @@
 import re
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
@@ -41,7 +41,7 @@ setup(
         "Issue tracker": "https://github.com/OrangutanGaming/PiXL-Maths-App-Farm/issues",
     },
     version=version,
-    packages=["pma"],
+    packages=find_packages(),
     license="MIT",
     description="Farms points for the PiXL Maths App",
     long_description=readme,
