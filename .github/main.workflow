@@ -1,8 +1,6 @@
 workflow "Test and upload on tag" {
-  resolves = [
-    "Twine upload",
-  ]
   on = "push"
+  resolves = ["Uploads to Docker Hub"]
 }
 
 action "Filter tag" {
@@ -34,4 +32,15 @@ action "Twine upload" {
   uses = "orangutangaming/actions/twine-upload@master"
   secrets = ["TWINE_USERNAME", "TWINE_PASSWORD"]
   needs = ["Test 2.7", "Test 3.5", "Test 3.6", "Test 3.7"]
+}
+
+action "Uploads to Docker Hub" {
+  uses = "pangzineng/Github-Action-One-Click-Docker@master"
+  needs = ["Twine upload"]
+  env = {
+    DOCKER_USERNAME = "orangutan"
+    DOCKER_IMAGE_NAME = "pma"
+    DOCKER_NAMESPACE = "orangutan"
+  }
+  secrets = ["DOCKER_PASSWORD"]
 }
