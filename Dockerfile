@@ -4,5 +4,5 @@ WORKDIR /tmp
 COPY . .
 RUN pip install -U .
 
-ENTRYPOINT ["python -m pma"]
+ENTRYPOINT ["python", "-m", "pma"]
 CMD ["--help"]
