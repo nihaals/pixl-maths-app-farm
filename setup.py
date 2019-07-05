@@ -48,7 +48,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     install_requires=requirements,
-    # python_requires='>=3.6',
+    python_requires='>=3.5',
     entry_points="""
     [console_scripts]
     pma=pma.cli:cli
