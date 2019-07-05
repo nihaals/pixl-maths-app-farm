@@ -49,6 +49,10 @@ setup(
     include_package_data=True,
     install_requires=requirements,
     # python_requires='>=3.6',
+    entry_points="""
+    [console_scripts]
+    pma=pma.cli:cli
+    """,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
