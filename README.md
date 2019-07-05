@@ -1,12 +1,17 @@
-# PiXL-Maths-App-Farm
+# PiXL Maths App Farm
 
-This project requires atleast Python 3.6 (can probably use 3.4). It may not work correctly on MacOS or Linux
-
-Thanks to Connor for doing the initial testing and finding the exploit, thanks to Ben for the idea of zooming in for more accurate OCR. I was responsible for coding it, finding the questions and doing more indepth testing. This script took a while to make so I hope you enjoy it. It is licensed under MIT so if you post the code elsewhere, you must also give the license with it.
+This project requires at least Python 3.6 (can probably use lower versions but not tested).
+The tool is designed to work with [PiXL's Maths App](https://mathsapp.pixl.org.uk/PMA2.html).
+It was created by reverse engineering the flash file and took a huge amount of time so any
+support is appreciated.
 
 ## Setup
-1. `pip install -U -r requirements.txt` or `pip3 install -U -r requirements.txt`
-2. Edit the coordinate values (this may be improved with point values that will work with any resolution monitor as long as you use Firefox and have a bookmark toolbar as this is the setup I used. The existing coordinates are for 1440x900)
-3. Install [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki#tesseract-at-ub-mannheim)
-4. Change the paths for [Tesseract](https://github.com/OrangutanGaming/PiXL-Maths-App-Farm/blob/master/app.py#L13) and the [temp screenshot save location](https://github.com/OrangutanGaming/PiXL-Maths-App-Farm/blob/master/app.py#L14)
-5. Run `app.py`
+1. Install [Python](https://www.python.org/downloads/)
+2. Run `pip install -U pma` in your terminal/command prompt. This is the same command to update
+
+## CLI Usage
+* `python -m pma farm --help`
+* `python -m pma farm --goal 100 SCHOOL_ID USERNAME PASSWORD`
+* `python -m pma farm --yes SCHOOL_ID USERNAME PASSWORD`
+* `python -m pma farm --goal 100 --yes SCHOOL_ID USERNAME PASSWORD`
+* `python -m pma farm SCHOOL_ID USERNAME PASSWORD`

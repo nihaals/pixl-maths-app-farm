@@ -1,4 +1,2 @@
-keyboard
-Pillow
-pyautogui
-pytesseract
+requests
+click
