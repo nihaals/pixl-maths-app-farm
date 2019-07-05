@@ -36,7 +36,7 @@ __all__ = ['ALL_PLCS', 'User']
 BASE_URL = 'https://mathsapp.pixl.org.uk/PMA2/'
 VERSION_NUMBER = '4.81'
 
-with open(os.path.join(os.path.abspath(__file__), 'plcs.json')) as fp:
+with open(os.path.join(os.path.abspath(__file__), '..', 'plcs.json')) as fp:
     ALL_PLCS = json.load(fp)
 
 
