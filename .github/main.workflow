@@ -8,11 +8,6 @@ action "Filter tag" {
   args = "tag"
 }
 
-action "Test 2.7" {
-  uses = "orangutangaming/actions/pytest-install-27@master"
-  needs = ["Filter tag"]
-}
-
 action "Test 3.5" {
   uses = "orangutangaming/actions/pytest-install-35@master"
   needs = ["Filter tag"]
@@ -31,7 +26,7 @@ action "Test 3.7" {
 action "Twine upload" {
   uses = "orangutangaming/actions/twine-upload@master"
   secrets = ["TWINE_USERNAME", "TWINE_PASSWORD"]
-  needs = ["Test 2.7", "Test 3.5", "Test 3.6", "Test 3.7"]
+  needs = ["Test 3.5", "Test 3.6", "Test 3.7"]
 }
 
 action "Uploads to Docker Hub" {
