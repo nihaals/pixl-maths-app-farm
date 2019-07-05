@@ -61,6 +61,7 @@ def farm(goal, school_id: str, username: str, password: str):
 
     length_all_plcs = len(ALL_PLCS)
     length_longest_question = len(sorted(ALL_PLCS, reverse=True, key=lambda i: len(i['question']))[0]['question'])
+    padding_max = max(len(str(last_score)) + 1, 5)
 
     removed_questions = []
     completed = 0
@@ -84,8 +85,9 @@ def farm(goal, school_id: str, username: str, password: str):
                     "Current score: {:{}} "
                     "Completed: {:{}}".format(question['question'], length_longest_question, len(removed_questions),
                                               len(str(length_all_plcs)), length_all_plcs, current_score,
-                                              4 if goal == -1 else len(str(goal)), completed,
-                                              4 if goal == -1 else len(str(goal - current_score + completed))))
+                                              padding_max if goal == -1 else len(str(goal)), completed,
+                                              padding_max if goal == -1 else
+                                              len(str(goal - current_score + completed))))
 
             last_score = current_score
             if last_score >= goal != -1:
