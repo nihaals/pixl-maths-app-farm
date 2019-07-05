@@ -32,6 +32,6 @@ action "Test 3.7" {
 
 action "Twine upload" {
   uses = "orangutangaming/actions/twine-upload@master"
-  secrets = ["TWINE_PASSWORD", "TWINE_USERNAME"]
+  secrets = ["TWINE_USERNAME", "TWINE_PASSWORD"]
   needs = ["Test 2.7", "Test 3.5", "Test 3.6", "Test 3.7"]
 }
