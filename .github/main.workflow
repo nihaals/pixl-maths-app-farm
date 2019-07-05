@@ -1,6 +1,6 @@
 workflow "Test and upload on tag" {
   on = "push"
-  resolves = ["Uploads to Docker Hub"]
+  resolves = ["Discord Webhook"]
 }
 
 action "Filter tag" {
@@ -30,12 +30,20 @@ action "Twine upload" {
 }
 
 action "Uploads to Docker Hub" {
-  uses = "pangzineng/Github-Action-One-Click-Docker@master"
+  uses = "orangutangaming/actions/docker-upload@master"
   needs = ["Twine upload"]
   env = {
     DOCKER_USERNAME = "orangutan"
     DOCKER_IMAGE_NAME = "pma"
     DOCKER_NAMESPACE = "orangutan"
+    DOCKER_IMAGE_TAG_SHA = "false"
   }
   secrets = ["DOCKER_PASSWORD"]
+}
+
+action "Discord Webhook" {
+  uses = "Ilshidur/action-discord@master"
+  needs = ["Uploads to Docker Hub"]
+  secrets = ["DISCORD_WEBHOOK"]
+  args = "Successfully deployed new PMA update."
 }
