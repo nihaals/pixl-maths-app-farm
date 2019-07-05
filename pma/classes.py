@@ -25,8 +25,9 @@ SOFTWARE.
 import hashlib
 import json
 from itertools import zip_longest
+from pathlib import Path
 from typing import List
-import os
+
 import requests
 
 from pma.exceptions import InvalidLogin
@@ -36,7 +37,7 @@ __all__ = ['ALL_PLCS', 'User']
 BASE_URL = 'https://mathsapp.pixl.org.uk/PMA2/'
 VERSION_NUMBER = '4.81'
 
-with open(os.path.join(os.path.abspath(__file__), '..', 'plcs.json')) as fp:
+with open(Path(__file__).parent.joinpath('plcs.json')) as fp:
     ALL_PLCS = json.load(fp)
 
 
