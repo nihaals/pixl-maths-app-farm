@@ -12,6 +12,7 @@ support is appreciated.
 There are also [docker images](https://hub.docker.com/r/orangutan/pma).
 
 ## CLI Usage
+* `pma farm --help`
 * `python -m pma farm --help`
 * `python -m pma farm --goal 100 SCHOOL_ID USERNAME PASSWORD`
 * `python -m pma farm --yes SCHOOL_ID USERNAME PASSWORD`
