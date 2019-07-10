@@ -37,7 +37,6 @@ setup(
     author="Nihaal Sangha (Orangutan)",
     url="https://github.com/OrangutanGaming/PiXL-Maths-App-Farm",
     project_urls={
-        # "Documentation": "https://discordpy.readthedocs.io/en/latest/",
         "Issue tracker": "https://github.com/OrangutanGaming/PiXL-Maths-App-Farm/issues",
     },
     version=version,
