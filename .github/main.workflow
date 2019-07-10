@@ -25,8 +25,11 @@ action "Test 3.7" {
 
 action "Twine upload" {
   uses = "orangutangaming/actions/twine-upload@master"
-  secrets = ["TWINE_USERNAME", "TWINE_PASSWORD"]
+  secrets = ["TWINE_PASSWORD"]
   needs = ["Test 3.5", "Test 3.6", "Test 3.7"]
+  env = {
+    TWINE_USERNAME = "OrangutanGaming"
+  }
 }
 
 action "Uploads to Docker Hub" {
