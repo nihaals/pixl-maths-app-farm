@@ -38,7 +38,7 @@ def cli():
     pass
 
 
-@click.command()
+@cli.command()
 @click.confirmation_option(help='Are you sure you want to farm points?')
 @click.option('--goal', default=-1,
               help='The goal score. If not given, it will continue until it stops gaining points.')
@@ -94,5 +94,3 @@ def farm(goal, school_id: str, username: str, password: str):
                 _status('\nGoal reached ({}).'.format(goal), newline=True)
                 raise click.Abort()
 
-
-cli.add_command(farm)
