@@ -63,17 +63,33 @@ jobs:
         env:
           POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
         run: poetry publish --build
-      - name: Build and push to Docker Hub
+      - name: Build and push versions to Docker Hub
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
           name: orangutan/pma
           username: orangutan
           password: ${{ secrets.DOCKER_PASSWORD }}
           tag_semver: true
-      - name: Build and push to GitHub Packages
+      - name: Build and push latest to Docker Hub
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: docker.pkg.github.com/${{ github.actor }}/${{ github.repository }}/pma
+          name: orangutan/pma
+          username: orangutan
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          tags: 'latest'
+      - name: Build and push versions to GitHub Packages
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: ${{ github.actor }}/${{ github.repository }}/pma
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
           tag_semver: true
+      - name: Build and push latest to GitHub Packages
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: ${{ github.actor }}/${{ github.repository }}/pma
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+          registry: docker.pkg.github.com
+          tags: 'latest'
