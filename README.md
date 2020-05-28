@@ -23,3 +23,5 @@ There are also docker images on [GitHub](https://github.com/nihaals/pixl-maths-a
 * `python -m pma farm --yes SCHOOL_ID USERNAME PASSWORD`
 * `python -m pma farm --goal 100 --yes SCHOOL_ID USERNAME PASSWORD`
 * `python -m pma farm SCHOOL_ID USERNAME PASSWORD`
+
+Note: You can use either `pma` or `python -m pma`
