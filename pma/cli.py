@@ -24,7 +24,7 @@ SOFTWARE.
 
 import click
 
-from pma import ALL_PLCS, User
+from pma import ALL_PLCS, User, __version__
 from pma.exceptions import InvalidLogin
 
 
@@ -34,6 +34,7 @@ def _status(text: str, newline: bool = False):
 
 
 @click.group()
+@click.version_option(__version__, prog_name='PMA')
 def cli():
     pass
 
