@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-__version__ = '1.0.4'
+from importlib.metadata import version as _version
+
+__version__ = _version('PMA')
 
 from pma.classes import *
