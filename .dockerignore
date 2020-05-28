@@ -1,3 +1,9 @@
-.idea/
-.git/
-tests/
+/.git/
+/.gitignore/
+
+/.idea/
+/.vscode/
+/.venv/
+__pycache__/
+.pytest_cache/
+pma.egg-info/
