@@ -82,14 +82,22 @@ def farm(goal, school_id: str, username: str, password: str):
             if current_score == last_score:
                 removed_questions.append(question['question'])
 
-            _status("Last question: {:{}} "
-                    "Removed questions: {:{}}/{} "
-                    "Current score: {:{}} "
-                    "Completed: {:{}}".format(question['question'], length_longest_question, len(removed_questions),
-                                              len(str(length_all_plcs)), length_all_plcs, current_score,
-                                              padding_max if goal == -1 else len(str(goal)), completed,
-                                              padding_max if goal == -1 else
-                                              len(str(goal - current_score + completed))))
+            _status(
+                "Last question: {:{}} "
+                "Removed questions: {:{}}/{} "
+                "Current score: {:{}} "
+                "Completed: {:{}}".format(
+                    question['question'],
+                    length_longest_question,
+                    len(removed_questions),
+                    len(str(length_all_plcs)),
+                    length_all_plcs,
+                    current_score,
+                    padding_max if goal == -1 else len(str(goal)),
+                    completed,
+                    padding_max if goal == -1 else len(str(goal - current_score + completed)),
+                )
+            )
 
             last_score = current_score
             if last_score >= goal != -1:
