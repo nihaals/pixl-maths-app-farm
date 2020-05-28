@@ -9,7 +9,7 @@ support is appreciated.
 1. Install [Python](https://www.python.org/downloads/)
 2. Run `pip install -U pma` in your terminal/command prompt. This is the same command to update
 
-There are also [docker images](https://hub.docker.com/r/orangutan/pma).
+There are also docker images on [GitHub](https://github.com/nihaals/pixl-maths-app-farm/packages) and [Docker Hub](https://hub.docker.com/r/orangutan/pma).
 
 ## CLI Usage
 * `pma farm --help`
