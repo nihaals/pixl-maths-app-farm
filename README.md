@@ -1,7 +1,7 @@
 # PiXL Maths App Farm
 [![Tests](https://github.com/nihaals/pixl-maths-app-farm/workflows/Tests/badge.svg)](https://github.com/nihaals/pixl-maths-app-farm/actions?query=workflow%3ATests)
 [![codecov](https://codecov.io/gh/nihaals/pixl-maths-app-farm/branch/master/graph/badge.svg)](https://codecov.io/gh/nihaals/pixl-maths-app-farm)
-[![PyPI](https://img.shields.io/pypi/v/pixl-maths-app-farm)](https://pypi.org/project/PMA/)
+[![PyPI](https://img.shields.io/pypi/v/PMA)](https://pypi.org/project/PMA/)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/PMA)](https://pypi.org/project/PMA/)
 [![PyPI - Wheel](https://img.shields.io/pypi/wheel/PMA)](https://pypi.org/project/PMA/)
 
