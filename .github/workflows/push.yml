@@ -40,6 +40,6 @@ jobs:
       - name: Install/update package and dependencies
         run: poetry install
       - name: Test with Pytest and measure coverage
-        run: poetry run pytest --cov-report=xml --cov=pecho tests/
+        run: poetry run pytest --cov-report=xml --cov=pma tests/
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
