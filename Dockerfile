@@ -1,8 +1,8 @@
-FROM python:3.7
+FROM python:3.8-slim
 
 WORKDIR /tmp
 COPY . .
 RUN pip install -U .
 
-ENTRYPOINT ["python", "-m", "pma"]
+ENTRYPOINT ["pma"]
 CMD ["--help"]
