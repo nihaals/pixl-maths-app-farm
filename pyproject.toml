@@ -4,7 +4,7 @@ version = "2.0.2"
 description = "Farm points on PiXL Maths App"
 authors = ["Nihaal Sangha <me@niha.al>"]
 license = "MIT"
-include = ["LICENSE", "pma/plcs.json"]
+include = ["pma/plcs.json"]
 readme = "README.md"
 repository = "https://github.com/nihaals/pixl-maths-app-farm"
 
